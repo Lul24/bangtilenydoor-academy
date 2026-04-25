@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Bangtilenydoor Academy</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon_io/logo.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+  <link rel="manifest" href="favicon_io/site.webmanifest">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+/* Additional contact page styles - does NOT affect footer */
+body {
+  background: linear-gradient(135deg, #0f172a, #2563eb, #3b82f6);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* GLASS CONTAINER */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  margin-top: 20px;
+}
+
+.contact-box {
+  display: flex;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 1100px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* LEFT PANEL */
+.left-panel {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: #fff;
+  padding: 50px 40px;
+  width: 40%;
+}
+
+.left-panel h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.left-panel p {
+  opacity: 0.85;
+}
+
+.info {
+  margin-top: 30px;
+}
+
+.info p {
+  margin: 12px 0;
+  font-size: 15px;
+}
+
+.whatsapp-btn {
+  margin-top: 25px;
+  display: inline-block;
+  background: #25D366;
+  padding: 12px 22px;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* RIGHT PANEL */
+.right-panel {
+  padding: 50px 40px;
+  width: 60%;
+  background: #ffffff;
+}
+
+.right-panel h3 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+.form-control, .form-select {
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 0.2rem rgba(37,99,235,0.15);
+}
+
+/* BUTTON */
+.btn-send {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  border: none;
+  border-radius: 50px;
+  padding: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-send:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(37,99,235,0.3);
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .contact-box {
+    flex-direction: column;
+  }
+  .left-panel, .right-panel {
+    width: 100%;
+  }
+  .wrapper {
+    padding: 20px;
+    margin-top: 10px;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<!-- ========== HEADER WITH MOBILE MENU ========== -->
+<header class="header">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="index.html">
+        <div class="logo-wrapper">
+          <img src="assets/logo.png" alt="Bang-Ti-Lenydoor Academy Logo" class="logo-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="logo-icon-fallback" style="display: none;">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="logo-text">
+            <h1>Bangtilenydoor Academy</h1>
+            <span>Global access · funded futures</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="mobile-toggle" id="mobileToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="impacts.html">Impacts</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="inquiry.html" class="btn-outline-nav">Inquiry</a>
+    </div>
+  </div>
+</header>
+
+<!-- ========== STICKY CTA ========== -->
+<div class="sticky-cta">
+  <a href="https://wa.me/+256768864425" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i> Need Help?
+  </a>
+  <a href="inquiry.html" class="sticky-inquiry">
+    <i class="fas fa-paper-plane"></i> Apply Now
+  </a>
+</div>
+
+<div class="wrapper">
+  <div class="contact-box">
+
+    <!-- LEFT SIDE -->
+    <div class="left-panel">
+      <h2>Get in Touch</h2>
+      <p>We help students achieve global education dreams.</p>
+
+      <div class="info">
+        <p>📧 bangtilenydooroffice@gmail.com</p>
+        <p>📱 +256 768 864 425</p>
+        <p>🌍 Global Support Available</p>
+      </div>
+
+      <a href="https://wa.me/256768864425" target="_blank" class="whatsapp-btn">
+        💬 Chat on WhatsApp
+      </a>
+    </div>
+
+    <!-- RIGHT SIDE - UPDATED FOR NETLIFY -->
+    <div class="right-panel">
+      <h3>Send us a message</h3>
+
+      <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        
+        <div class="row g-3">
+
+          <div class="col-md-6">
+            <input type="text" name="name" id="contactName" class="form-control" placeholder="Full Name" required>
+          </div>
+
+          <div class="col-md-6">
+            <input type="email" name="email" id="contactEmail" class="form-control" placeholder="Email Address" required>
+          </div>
+
+          <div class="col-md-6">
+            <input type="tel" name="phone" id="contactPhone" class="form-control" placeholder="Phone Number">
+          </div>
+
+          <div class="col-md-6">
+            <select name="subject" id="contactSubject" class="form-select">
+              <option value="">Select Subject</option>
+              <option value="scholarship">Scholarship</option>
+              <option value="admission">Admission</option>
+              <option value="support">Support</option>
+            </select>
+          </div>
+
+          <div class="col-12">
+            <textarea name="message" id="contactMessage" class="form-control" rows="4" placeholder="Write your message..." required></textarea>
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-send w-100">
+              Send Message
+            </button>
+          </div>
+
+          <div id="contactFeedback" class="text-center mt-3"></div>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER - Dark Blue Theme (from style.css) -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Bangtilenydoor Academy</h4>
+        <p style="margin-top: 1rem;">Empowering students worldwide with access to scholarships and global education.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="programs.html">Programs</a>
+          <a href="scholarships.html">Scholarships</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <div class="footer-links">
+          <a href="#">Scholarship Guide</a>
+          <a href="#">Application Tips</a>
+          <a href="#">FAQ</a>
+        </div>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <form id="newsletterForm" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+          <input type="hidden" name="form-name" value="newsletter">
+          <input type="email" name="email" id="newsEmail" placeholder="Your email" style="padding: 0.8rem; border-radius: 30px; border: none; flex: 1;" required>
+          <button type="submit" style="background: #f39c12; border: none; padding: 0.8rem 1.2rem; border-radius: 30px;">→</button>
+        </form>
+        <div id="newsMsg" style="margin-top: 0.5rem;"></div>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Bangtilenydoor Academy. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
