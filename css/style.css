@@ -1848,3 +1848,145 @@ textarea.form-control {
   color: #0c5460;
   border-left: 4px solid #17a2b8;
 }
+/* ============================================
+   STUDENT APPLICATION SYSTEM STYLES
+   ============================================ */
+
+/* Course Details Panel */
+.course-details {
+    background: #f0f9ff;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 10px;
+    border-left: 4px solid #3b82f6;
+    display: none;
+}
+
+.course-details.show {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Info Badges */
+.info-badge {
+    background: #e0e7ff;
+    color: #1e40af;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.price-tag {
+    color: #059669;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.duration-tag {
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+/* Form Steps */
+.form-step {
+    transition: all 0.3s ease;
+}
+
+/* Review Card */
+.review-card {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.review-card table {
+    margin-bottom: 0;
+}
+
+.review-card td {
+    padding: 8px 0;
+    border: none;
+}
+
+/* Info Card */
+.info-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.info-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 1.5rem;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-body h2 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+/* Button Styles for Application Form */
+.btn-primary.next-step {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    border: none;
+    padding: 10px 24px;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #1e293b;
+    border: none;
+    padding: 10px 24px;
+    margin-right: 10px;
+}
+
+.btn-secondary:hover {
+    background: #cbd5e1;
+    color: #1e293b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .review-card {
+        padding: 15px;
+    }
+    
+    .review-card td {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+    }
+    
+    .btn-secondary {
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+}
