@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inquiry | Bangtilenydoor Academy - Start Your Global Journey</title>
-  <meta name="description" content="Apply for scholarship guidance and student support at Bang-Ti-Lenydoor Academy. Start your journey to global education today.">
+  <title>Student Application | Bangtilenydoor Academy - Inquiry</title>
+  <meta name="description" content="Apply to Bangtilenydoor Academy - Complete your application online for undergraduate and postgraduate programs. Get your Application ID instantly.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon_io/logo.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-  <link rel="manifest" href="favicon_io/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="/favicon_io/logo.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+  <link rel="manifest" href="/favicon_io/site.webmanifest">
   
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,39 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <style>
+    .course-option-card {
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .course-option-card:hover {
+      border-color: #3b82f6;
+      background: #eff6ff;
+    }
+    .course-option-card.selected {
+      border-color: #3b82f6;
+      background: #eff6ff;
+    }
+    .course-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #1e293b;
+    }
+    .course-detail {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+    .course-fee {
+      color: #059669;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
 
@@ -39,13 +71,13 @@
     <div class="logo">
       <a href="index.html">
         <div class="logo-wrapper">
-          <img src="assets/logo.png" alt="Bang-Ti-Lenydoor Academy Logo" class="logo-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="/assets/logo.png" alt="Bangtilenydoor Academy Logo" class="logo-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="logo-icon-fallback" style="display: none;">
             <i class="fas fa-graduation-cap"></i>
           </div>
           <div class="logo-text">
-            <h1>Bangtilenydoor Academy </h1>
-            <span>Global access · funded futures</span>
+            <h1>Bangtilenydoor Academy</h1>
+            <span>Global Access · Funded Futures</span>
           </div>
         </div>
       </a>
@@ -65,7 +97,7 @@
 </header>
 
 <main>
-  <!-- Hero Section with Background Image -->
+  <!-- Hero Section -->
   <section class="inquiry-hero">
     <div class="floating-shape floating-shape-1"></div>
     <div class="floating-shape floating-shape-2"></div>
@@ -73,135 +105,168 @@
       <div class="row justify-content-center text-center">
         <div class="col-lg-8">
           <div class="hero-badge">
-            <i class="fas fa-graduation-cap me-2"></i> Your Future Starts Here
+            <i class="fas fa-graduation-cap me-2"></i> Student Application Portal
           </div>
-          <h1 class="hero-title">Ready to <span class="highlight-accent">Transform Your Future?</span></h1>
-          <p class="hero-description">Take the first step toward your global education journey. Fill out the form below and our scholarship experts will guide you every step of the way.</p>
-          <div class="hero-trust-badges">
-          </div>
+          <h1 class="hero-title">Start Your <span class="highlight-accent">Application Today</span></h1>
+          <p class="hero-description">Join Bangtilenydoor Academy and take the first step toward your global education journey.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Main Form Section -->
+  <!-- Main Application Section -->
   <section class="inquiry-section">
     <div class="container">
       <div class="row g-5">
-        <!-- Left Column - Form -->
+        <!-- Left Column - Application Form -->
         <div class="col-lg-7">
           <div class="form-card">
             <div class="form-header">
               <div class="benefit-icon">
-                <i class="fas fa-pen-fill"></i>
+                <i class="fas fa-file-alt"></i>
               </div>
-              <h2>Student Interest Form</h2>
-              <p>Complete this form and get personalized scholarship matches within 24 hours</p>
+              <h2>Student Inquiry Form</h2>
+              <p>Have questions about our programs? Fill out this form and we'll get back to you soon.</p>
             </div>
             
             <!-- Progress Steps -->
             <div class="progress-steps">
               <div class="step-item">
-                <div class="step-circle active">1</div>
-                <div class="step-label active">Personal Info</div>
+                <div class="step-circle active" id="step1Circle">1</div>
+                <div class="step-label active" id="step1Label">Personal Info</div>
               </div>
               <div class="step-item">
-                <div class="step-circle">2</div>
-                <div class="step-label">Academic Details</div>
+                <div class="step-circle" id="step2Circle">2</div>
+                <div class="step-label" id="step2Label">Academic & Course</div>
               </div>
               <div class="step-item">
-                <div class="step-circle">3</div>
-                <div class="step-label">Submit</div>
+                <div class="step-circle" id="step3Circle">3</div>
+                <div class="step-label" id="step3Label">Submit</div>
               </div>
             </div>
             
-            <!-- UPDATED FORM FOR NETLIFY -->
             <form id="inquiryFormPage" name="inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
               <input type="hidden" name="form-name" value="inquiry">
               
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label">Full Name *</label>
-                  <input type="text" name="name" id="fullNamePage" class="form-control" placeholder="Enter your full name" required>
+              <!-- Step 1: Personal Information -->
+              <div id="step1" class="form-step">
+                <h4 class="mb-3"><i class="fas fa-user me-2 text-primary"></i> Personal Information</h4>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" name="name" id="fullNamePage" class="form-control" placeholder="Enter your full name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" name="email" id="emailAddressPage" class="form-control" placeholder="you@example.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" name="phone" id="phonePage" class="form-control" placeholder="+1234567890">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Country of Residence *</label>
+                    <select name="country" id="countryPage" class="form-select" required>
+                      <option value="">Select your country</option>
+                      <option>Malaysia</option>
+                      <option>Japan</option>
+                      <option>Canada</option>
+                      <option>China</option>
+                      <option>Ghana</option>
+                      <option>South Africa</option>
+                      <option>India</option>
+                      <option>Nigeria</option>
+                      <option>Kenya</option>
+                      <option>Rwanda</option>
+                      <option>South Sudan</option>
+                      <option>Uganda</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-12">
+                    <button type="button" class="btn btn-primary next-step" id="nextToStep2">Next →</button>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <label class="form-label">Email Address *</label>
-                  <input type="email" name="email" id="emailAddressPage" class="form-control" placeholder="you@example.com" required>
+              </div>
+              
+              <!-- Step 2: Academic Details & Course Selection -->
+              <div id="step2" class="form-step" style="display: none;">
+                <h4 class="mb-3"><i class="fas fa-graduation-cap me-2 text-primary"></i> Academic Details & Course Selection</h4>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Current Education Level *</label>
+                    <select name="education_level" id="educationLevelPage" class="form-select" required>
+                      <option value="">Select education level</option>
+                      <option>High School (9-12)</option>
+                      <option>High School Graduate</option>
+                      <option>Diploma</option>
+                      <option>Bachelor's Degree (In Progress)</option>
+                      <option>Bachelor's Degree (Completed)</option>
+                      <option>Master's Degree (In Progress)</option>
+                      <option>Master's Degree (Completed)</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Mode of Study *</label>
+                    <select name="study_mode" id="studyModePage" class="form-select" required>
+                      <option value="">Select mode of study</option>
+                      <option value="full_time">Full-time</option>
+                      <option value="part_time">Part-time</option>
+                      <option value="online">Online</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Program Level *</label>
+                    <select name="program_level" id="programLevelPage" class="form-select" required>
+                      <option value="">Select program level</option>
+                      <option value="undergraduate">Undergraduate</option>
+                      <option value="postgraduate">Postgraduate</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Select Your Course *</label>
+                    <div id="courseOptionsContainer"></div>
+                    <input type="hidden" name="course" id="selectedCourseInput">
+                    <div id="selectedCourseDetails" class="mt-2"></div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Academic Background & Career Goals *</label>
+                    <textarea name="message" id="messagePage" rows="4" class="form-control" placeholder="Tell us about:
+• Your academic background
+• Your career goals
+• Why you want to study at Bangtilenydoor Academy
+• Any specific questions or concerns" required></textarea>
+                  </div>
+                  
+                  <div class="col-12">
+                    <button type="button" class="btn btn-secondary" id="backToStep1">← Back</button>
+                    <button type="button" class="btn btn-primary" id="nextToSubmit">Review & Submit →</button>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <label class="form-label">Phone Number</label>
-                  <input type="tel" name="phone" id="phonePage" class="form-control" placeholder="+1234567890">
+              </div>
+              
+              <!-- Step 3: Terms & Submit -->
+              <div id="step3" class="form-step" style="display: none;">
+                <h4 class="mb-3"><i class="fas fa-check-circle me-2 text-primary"></i> Complete Your Application</h4>
+                
+                <!-- Application Summary -->
+                <div class="review-card bg-light p-3 rounded-3 mb-3">
+                  <h5 class="mb-2">Application Summary</h5>
+                  <div id="applicationSummary"></div>
                 </div>
-                <div class="col-md-6">
-                  <label class="form-label">Country of Residence *</label>
-                  <select name="country" id="countryPage" class="form-select" required>
-                    <option value="">Select your country</option>
-                    <option>United States</option>
-                    <option>United Kingdom</option>
-                    <option>Canada</option>
-                    <option>Australia</option>
-                    <option>Germany</option>
-                    <option>France</option>
-                    <option>India</option>
-                    <option>Nigeria</option>
-                    <option>Kenya</option>
-                    <option>Rwanda</option>
-                    <option>Egypt</option>
-                    <option>Ghana</option>
-                    <option>South Africa</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Current Education Level *</label>
-                  <select name="education_level" id="educationLevelPage" class="form-select" required>
-                    <option value="">Select education level</option>
-                    <option>High School (9-12)</option>
-                    <option>High School Graduate</option>
-                    <option>Diploma</option>
-                    <option>Bachelor's Degree (In Progress)</option>
-                    <option>Bachelor's Degree (Completed)</option>
-                    <option>Master's Degree (In Progress)</option>
-                    <option>Master's Degree (Completed)</option>
-                    <option>PhD/Doctorate</option>
-                    <option>Professional Certificate</option>
-                  </select>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Area of Interest *</label>
-                  <select name="interest" id="interestTypePage" class="form-select" required>
-                    <option value="">Select interest area</option>
-                    <option value="fully_funded">Fully Funded Scholarship</option>
-                    <option value="partial">Partial Scholarship</option>
-                    <option value="online_degree">Online Degree Program</option>
-                    <option value="distance">Distance Learning</option>
-                  </select>
+                
+                <div class="form-check mb-3">
+                  <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                  <label class="form-check-label" for="termsCheck">
+                    I confirm that all information provided is accurate and complete. I agree to the terms and conditions.
+                  </label>
                 </div>
                 
                 <div class="col-12">
-                  <label class="form-label">Academic Background & Goals *</label>
-                  <textarea name="message" id="messagePage" rows="5" class="form-control" placeholder="Tell us about:
-• Your academic background and GPA
-• Standardized test scores (IELTS, TOEFL, GRE, GMAT if any)
-• Your dream universities/programs
-• Any specific questions or concerns..." required></textarea>
-                </div>
-                <div class="col-12">
-                  <label class="form-label">How did you hear about us?</label>
-                  <select name="referral" id="referralPage" class="form-select">
-                    <option>Google Search</option>
-                    <option>Instagram/Facebook</option>
-                    <option>LinkedIn</option>
-                    <option>YouTube</option>
-                    <option>Friend/Family</option>
-                    <option>University Partner</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                
-                <div class="col-12">
-                  <button type="submit" class="btn-submit">
-                    <i class="fas fa-paper-plane me-2"></i> Submit Application →
+                  <button type="button" class="btn btn-secondary" id="backToStep2">← Back</button>
+                  <button type="submit" class="btn btn-primary" id="submitBtn">
+                    <i class="fas fa-paper-plane me-2"></i> Submit Application
                   </button>
                 </div>
                 <div id="formFeedbackPage" class="text-center mt-3"></div>
@@ -210,62 +275,87 @@
           </div>
         </div>
         
+        <!-- Right Column - Benefits & Info -->
         <div class="col-lg-5">
-          <div class="benefits-list">
-            <div class="benefit-item">
-              <div class="benefit-icon-small">
-                <i class="fas fa-bolt"></i>
+          <div class="benefits-card">
+            <h3><i class="fas fa-star me-2"></i> Why Apply Today?</h3>
+            <div class="benefits-list">
+              <div class="benefit-item">
+                <div class="benefit-icon-small">
+                  <i class="fas fa-id-card"></i>
+                </div>
+                <div>
+                  <strong>Instant Application ID</strong><br>
+                  <small>Receive your unique ID upon submission</small>
+                </div>
               </div>
-              <div>
-                <strong>Fast Matching</strong><br>
-                <small>Get matched within 24 hours</small>
+              <div class="benefit-item">
+                <div class="benefit-icon-small">
+                  <i class="fas fa-whatsapp"></i>
+                </div>
+                <div>
+                  <strong>WhatsApp Support</strong><br>
+                  <small>Connect with our admissions team instantly</small>
+                </div>
               </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon-small">
-                <i class="fas fa-chart-line"></i>
+              <div class="benefit-item">
+                <div class="benefit-icon-small">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div>
+                  <strong>95% Success Rate</strong><br>
+                  <small>Proven track record of admissions</small>
+                </div>
               </div>
-              <div>
-                <strong>95% Success Rate</strong><br>
-                <small>Proven track record</small>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon-small">
-                <i class="fas fa-globe"></i>
-              </div>
-              <div>
-                <strong>75+ University Partners</strong><br>
-                <small>Global network</small>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon-small">
-                <i class="fas fa-hand-holding-heart"></i>
-              </div>
-              <div>
-                <strong>100% Free Guidance</strong><br>
-                <small>No hidden fees ever</small>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon-small">
-                <i class="fas fa-plane"></i>
-              </div>
-              <div>
-                <strong>Free Flight Ticket</strong><br>
-                <small>Eligible students receive sponsored travel support</small>
+              <div class="benefit-item">
+                <div class="benefit-icon-small">
+                  <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <div>
+                  <strong>Scholarship Support</strong><br>
+                  <small>Financial aid guidance available</small>
+                </div>
               </div>
             </div>
+          </div>
+          
+          <div class="info-card mt-4 p-4 bg-white rounded-4 shadow-sm">
+            <h4><i class="fas fa-lock me-2 text-primary"></i> Your Data is Secure</h4>
+            <p class="small text-muted">All information is encrypted and stored securely. We never share your data.</p>
+            <hr>
+            <h4><i class="fas fa-clock me-2 text-primary"></i> Response Time</h4>
+            <p class="small text-muted">Our admissions team will contact you within 24 hours.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Confirmation Modal -->
+  <div class="modal fade" id="confirmationModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title"><i class="fas fa-check-circle me-2"></i>Application Submitted!</h5>
+        </div>
+        <div class="modal-body text-center">
+          <i class="fas fa-id-card fa-4x text-primary mb-3"></i>
+          <h4>Your Application ID</h4>
+          <h2 class="text-primary fw-bold" id="applicationId">BANG-2025-XXXX</h2>
+          <p class="mt-3">Dear <span id="applicantNameSpan"></span>,</p>
+          <p>Thank you for applying to <strong id="selectedCourseSpan"></strong> at Bangtilenydoor Academy.</p>
+          <p>Our admissions team will review your application and contact you within 24 hours.</p>
+          <hr>
+          <a href="#" class="btn btn-success w-100 mb-2" target="_blank" id="whatsappLink">
+            <i class="fab fa-whatsapp me-2"></i> Continue on WhatsApp
+          </a>
+          <button class="btn btn-outline-primary w-100" onclick="window.location.href='index.html'">
+            <i class="fas fa-home me-2"></i> Return to Homepage
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- FAQ Section -->
   <section class="faq-section">
@@ -273,39 +363,30 @@
       <div class="faq-header">
         <span class="section-badge">Got Questions?</span>
         <h2>FAQs</h2>
-        <p>Everything you need to know about our scholarship guidance</p>
+        <p>Everything you need to know about our application process</p>
       </div>
       <div class="faq-grid">
         <div class="faq-item">
+          <i class="fas fa-id-card"></i>
+          <h4>What is an Application ID?</h4>
+          <p>Your unique Application ID helps us track your application status.</p>
+        </div>
+        <div class="faq-item">
           <i class="fas fa-clock"></i>
           <h4>How long does it take to get a response?</h4>
-          <p>We respond to all inquiries within 24 hours. Most students receive their initial scholarship matches within 48 hours.</p>
+          <p>We respond within 24 hours. Most students receive a response within 48 hours.</p>
         </div>
         <div class="faq-item">
           <i class="fas fa-dollar-sign"></i>
-          <h4>Is there any cost for your services?</h4>
-          <p>Our initial consultation and scholarship matching service is completely free. We only charge for premium services if you choose to use them.</p>
+          <h4>Is there an application fee?</h4>
+          <p>No, our application and consultation service is completely free.</p>
         </div>
         <div class="faq-item">
-          <i class="fas fa-globe"></i>
-          <h4>Can you help students from any country?</h4>
-          <p>Yes! We have successfully helped students from over 40 countries worldwide secure scholarships and admissions.</p>
-        </div>
-        <div class="faq-item">
-          <i class="fas fa-graduation-cap"></i>
-          <h4>What types of scholarships do you help with?</h4>
-          <p>We help with fully funded scholarships, partial scholarships, assistantships, and merit-based awards for bachelor's, master's, and PhD programs.</p>
+          <i class="fas fa-whatsapp"></i>
+          <h4>How can I follow up on my application?</h4>
+          <p>Use WhatsApp or contact us directly using your Application ID.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="final-cta">
-    <div class="container text-center">
-      <h2>Don't Wait — Your Future Awaits</h2>
-      <p>Join thousands of successful students who trusted us with their global education journey.</p>
-      <a href="#top" class="btn-primary btn-large">Start Your Application Now →</a>
     </div>
   </section>
 </main>
@@ -350,7 +431,295 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
+
+<script>
+// Course Database
+const courses = {
+  undergraduate: {
+    full_time: [
+      { name: "B.Com (Hons)", duration: "3 years", fee: "$370/year" },
+      { name: "BBA", duration: "3 years", fee: "$370/year" },
+      { name: "BCA", duration: "3 years", fee: "$370/year" }
+    ],
+    part_time: [
+      { name: "B.Com (Hons)", duration: "4 years", fee: "$280/year" },
+      { name: "BBA", duration: "4 years", fee: "$280/year" },
+      { name: "BCA", duration: "4 years", fee: "$280/year" }
+    ],
+    online: [
+      { name: "B.Com (Hons)", duration: "3 years", fee: "$350/year" },
+      { name: "BBA", duration: "3 years", fee: "$350/year" },
+      { name: "BCA", duration: "3 years", fee: "$350/year" }
+    ]
+  },
+  postgraduate: {
+    full_time: [
+      { name: "MBA", duration: "2 years", fee: "$520/year" },
+      { name: "MCA", duration: "2 years", fee: "$470/year" }
+    ],
+    part_time: [
+      { name: "MBA", duration: "3 years", fee: "$400/year" },
+      { name: "MCA", duration: "3 years", fee: "$360/year" }
+    ],
+    online: [
+      { name: "MBA", duration: "2 years", fee: "$490/year" },
+      { name: "MCA", duration: "2 years", fee: "$440/year" }
+    ]
+  }
+};
+
+let selectedCourseData = null;
+
+function updateCourseOptions() {
+  const programLevel = document.getElementById('programLevelPage').value;
+  const studyMode = document.getElementById('studyModePage').value;
+  const container = document.getElementById('courseOptionsContainer');
+  
+  if (!programLevel || !studyMode) {
+    container.innerHTML = '<div class="alert alert-info">Please select Program Level and Mode of Study first</div>';
+    return;
+  }
+  
+  const availableCourses = courses[programLevel]?.[studyMode] || [];
+  
+  if (availableCourses.length === 0) {
+    container.innerHTML = '<div class="alert alert-warning">No courses available for this combination</div>';
+    return;
+  }
+  
+  let html = '<div class="row g-2">';
+  availableCourses.forEach((course, index) => {
+    html += `
+      <div class="col-12">
+        <div class="course-option-card" data-course-name="${course.name}" data-course-duration="${course.duration}" data-course-fee="${course.fee}">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <div class="course-name">${course.name}</div>
+              <div class="course-detail">Duration: ${course.duration}</div>
+            </div>
+            <div class="course-fee">${course.fee}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  html += '</div>';
+  container.innerHTML = html;
+  
+  // Add click handlers to course cards
+  document.querySelectorAll('.course-option-card').forEach(card => {
+    card.addEventListener('click', function() {
+      // Remove selected class from all cards
+      document.querySelectorAll('.course-option-card').forEach(c => c.classList.remove('selected'));
+      // Add selected class to clicked card
+      this.classList.add('selected');
+      
+      const courseName = this.getAttribute('data-course-name');
+      const courseDuration = this.getAttribute('data-course-duration');
+      const courseFee = this.getAttribute('data-course-fee');
+      
+      selectedCourseData = { name: courseName, duration: courseDuration, fee: courseFee };
+      document.getElementById('selectedCourseInput').value = courseName;
+      document.getElementById('selectedCourseDetails').innerHTML = `
+        <div class="alert alert-success mt-2">
+          <i class="fas fa-check-circle me-2"></i>
+          <strong>Selected Course:</strong> ${courseName}<br>
+          Duration: ${courseDuration} | Fee: ${courseFee}
+        </div>
+      `;
+    });
+  });
+}
+
+function getFieldValue(fieldId, defaultValue = 'Not provided') {
+  const element = document.getElementById(fieldId);
+  if (!element) return defaultValue;
+  const value = element.value;
+  return (value && value.trim() !== '') ? value : defaultValue;
+}
+
+function getSelectedCourseDisplay() {
+  if (selectedCourseData) {
+    return `${selectedCourseData.name} (${selectedCourseData.duration} - ${selectedCourseData.fee})`;
+  }
+  return 'Not selected';
+}
+
+function updateApplicationSummary() {
+  const summaryDiv = document.getElementById('applicationSummary');
+  summaryDiv.innerHTML = `
+    <table class="table table-sm">
+      <tr><td width="40%"><strong>Full Name</strong></td><td>${getFieldValue('fullNamePage', 'Not provided')}</td></tr>
+      <tr><td><strong>Email</strong></td><td>${getFieldValue('emailAddressPage', 'Not provided')}</td></tr>
+      <tr><td><strong>Phone</strong></td><td>${getFieldValue('phonePage', 'Not provided')}</td></tr>
+      <tr><td><strong>Country</strong></td><td>${getFieldValue('countryPage', 'Not provided')}</td></tr>
+      <tr><td><strong>Education Level</strong></td><td>${getFieldValue('educationLevelPage', 'Not provided')}</td></tr>
+      <tr><td><strong>Mode of Study</strong></td><td>${getFieldValue('studyModePage', 'Not provided')}</td></tr>
+      <tr><td><strong>Program Level</strong></td><td>${getFieldValue('programLevelPage', 'Not provided')}</td></tr>
+      <tr><td><strong>Selected Course</strong></td><td>${getSelectedCourseDisplay()}</td></tr>
+    </table>
+    <p><strong>Academic Background & Goals:</strong><br>${getFieldValue('messagePage', 'Not provided')}</p>
+  `;
+}
+
+function generateApplicationId() {
+  const year = new Date().getFullYear();
+  const random = Math.floor(Math.random() * 9000 + 1000);
+  return `BANG-${year}-${random}`;
+}
+
+function showStep(stepNumber) {
+  const step1 = document.getElementById('step1');
+  const step2 = document.getElementById('step2');
+  const step3 = document.getElementById('step3');
+  const step1Circle = document.getElementById('step1Circle');
+  const step2Circle = document.getElementById('step2Circle');
+  const step3Circle = document.getElementById('step3Circle');
+  const step1Label = document.getElementById('step1Label');
+  const step2Label = document.getElementById('step2Label');
+  const step3Label = document.getElementById('step3Label');
+  
+  step1.style.display = 'none';
+  step2.style.display = 'none';
+  step3.style.display = 'none';
+  
+  if (stepNumber === 1) step1.style.display = 'block';
+  if (stepNumber === 2) step2.style.display = 'block';
+  if (stepNumber === 3) step3.style.display = 'block';
+  
+  const circles = [step1Circle, step2Circle, step3Circle];
+  const labels = [step1Label, step2Label, step3Label];
+  
+  for (let i = 0; i < circles.length; i++) {
+    if (i + 1 <= stepNumber) {
+      circles[i].classList.add('active');
+      labels[i].classList.add('active');
+    } else {
+      circles[i].classList.remove('active');
+      labels[i].classList.remove('active');
+    }
+  }
+  
+  if (stepNumber === 3) {
+    updateApplicationSummary();
+  }
+}
+
+function validateStep1() {
+  const name = document.getElementById('fullNamePage').value.trim();
+  const email = document.getElementById('emailAddressPage').value.trim();
+  const country = document.getElementById('countryPage').value;
+  
+  if (!name) { alert('Please enter your full name'); return false; }
+  if (!email) { alert('Please enter your email address'); return false; }
+  if (!email.includes('@')) { alert('Please enter a valid email address'); return false; }
+  if (!country) { alert('Please select your country'); return false; }
+  return true;
+}
+
+function validateStep2() {
+  const educationLevel = document.getElementById('educationLevelPage').value;
+  const studyMode = document.getElementById('studyModePage').value;
+  const programLevel = document.getElementById('programLevelPage').value;
+  const message = document.getElementById('messagePage').value.trim();
+  
+  if (!educationLevel) { alert('Please select your education level'); return false; }
+  if (!studyMode) { alert('Please select mode of study'); return false; }
+  if (!programLevel) { alert('Please select program level'); return false; }
+  if (!selectedCourseData) { alert('Please select a course'); return false; }
+  if (!message) { alert('Please tell us about your academic background'); return false; }
+  return true;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Navigation
+  document.getElementById('nextToStep2').addEventListener('click', function() {
+    if (validateStep1()) showStep(2);
+  });
+  
+  document.getElementById('nextToSubmit').addEventListener('click', function() {
+    if (validateStep2()) showStep(3);
+  });
+  
+  document.getElementById('backToStep1').addEventListener('click', function() { showStep(1); });
+  document.getElementById('backToStep2').addEventListener('click', function() { showStep(2); });
+  
+  // Dynamic course updates
+  document.getElementById('programLevelPage').addEventListener('change', updateCourseOptions);
+  document.getElementById('studyModePage').addEventListener('change', updateCourseOptions);
+  
+  // Form submission
+  const form = document.getElementById('inquiryFormPage');
+  const formFeedback = document.getElementById('formFeedbackPage');
+  
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    if (!document.getElementById('termsCheck').checked) {
+      formFeedback.innerHTML = '<div class="alert alert-danger">⚠️ Please agree to the terms to continue.</div>';
+      return;
+    }
+    
+    const name = document.getElementById('fullNamePage').value.trim();
+    const applicationId = generateApplicationId();
+    const courseName = selectedCourseData ? selectedCourseData.name : 'Not specified';
+    
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Submitting...';
+    
+    try {
+      const formData = new FormData(form);
+      formData.append('application_id', applicationId);
+      
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+      
+      document.getElementById('applicationId').textContent = applicationId;
+      document.getElementById('applicantNameSpan').textContent = name;
+      document.getElementById('selectedCourseSpan').textContent = courseName;
+      
+      const whatsappMsg = `Hello, I just submitted my application to Bangtilenydoor Academy. My Application ID is ${applicationId} and I applied for ${courseName}.`;
+      document.getElementById('whatsappLink').href = `https://wa.me/256768864425?text=${encodeURIComponent(whatsappMsg)}`;
+      
+      new bootstrap.Modal(document.getElementById('confirmationModal')).show();
+      form.reset();
+      selectedCourseData = null;
+      formFeedback.innerHTML = '';
+      showStep(1);
+      
+    } catch (error) {
+      formFeedback.innerHTML = '<div class="alert alert-danger">❌ Error submitting application. Please try again.</div>';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i> Submit Application';
+    }
+  });
+  
+  showStep(1);
+  updateCourseOptions();
+});
+</script>
+
+<!-- Hidden forms for Netlify detection -->
+<div style="display: none;">
+  <form name="inquiry" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <input type="text" name="phone">
+    <input type="text" name="country">
+    <input type="text" name="education_level">
+    <input type="text" name="study_mode">
+    <input type="text" name="program_level">
+    <input type="text" name="course">
+    <textarea name="message"></textarea>
+    <input type="text" name="application_id">
+  </form>
+</div>
 
 </body>
 </html>
